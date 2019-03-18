@@ -1,0 +1,98 @@
+---
+SPDX-License-Identifier: MIT
+path: "/tutorials/enable-automatic-updates-centos-rhel"
+slug: "install-yum-cron-autoupdate-centos-rhel"
+date: "2019-03-19"
+title: "Enable automatic updates on CentOS/RHEL"
+short_description: "In this tutorial, you will learn how to enable automatic updating in CentOS/RHEL."
+tags: ["Linux", "CentOS", "RHEL"]
+author: "Abbas Mounesi"
+author_link: "https://github.com/abbasjiji"
+author_img: "https://avatars1.githubusercontent.com/u/48676013"
+---
+
+
+## Introduction
+
+In this tutorial, we will learn how to enable automatic updating in CentOS/RHEL.
+
+**Prerequisites**
+* Server with Linux operating system (CentOS/RHEL distribution)
+* SSH
+  * Putty (Windows)
+  * OpenSSH (Linux/MacOS)
+* Root access
+* `yum-cron` Package
+
+## Step 1 - Installing yum-cron Package
+
+We will use the yum-cron package to automatically update the operating system. The yum-cron package provides a convenient way to check for, download and apply updates automatically.
+
+Install the package with the following command:
+```
+yum install yum-cron
+```
+
+## Step 2 - Enabling yum-cron Service
+
+The following commands will enable the yum-cron service to start automatically when booting the operating system:
+
+* CentOS/RHEL 7.x
+```
+systemctl enable yum-cron.service
+```
+
+* CentOS/RHEL 6.x
+```
+chkconfig yum-cron on
+```
+
+### Step 2.1 - Starting yum-cron Service
+
+Using the following commands to start the yum-cron service:
+
+* CentOS/RHEL 7.x
+```
+systemctl start yum-cron.service
+```
+
+* CentOS/RHEL 6.x
+```
+service yum-cron start
+```
+
+
+## Conclusion
+
+Your operating system's packages will now be automatically updated every day.
+
+##### License: MIT
+
+<!---
+
+Contributors's Certificate of Origin
+
+By making a contribution to this project, I certify that:
+
+(a) The contribution was created in whole or in part by me and I have
+    the right to submit it under the license indicated in the file; or
+
+(b) The contribution is based upon previous work that, to the best of my
+    knowledge, is covered under an appropriate license and I have the
+    right under that license to submit that work with modifications,
+    whether created in whole or in part by me, under the same license
+    (unless I am permitted to submit under a different license), as
+    indicated in the file; or
+
+(c) The contribution was provided directly to me by some other person
+    who certified (a), (b) or (c) and I have not modified it.
+
+(d) I understand and agree that this project and the contribution are
+    public and that a record of the contribution (including all personal
+    information I submit with it, including my sign-off) is maintained
+    indefinitely and may be redistributed consistent with this project
+    or the license(s) involved.
+
+Signed-off-by: [Abbas Mounesi <abbasjiji@gmail.com>]
+
+-->
